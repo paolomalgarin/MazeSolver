@@ -1,11 +1,9 @@
-
 # MazeSolver
 
-> **Progetto scolastico in Java** per mostrare come i **thread** possono risolvere un labirinto generato casualmente.  
-> Un modo intuitivo per comprendere il multithreading grazie alla visualizzazione di “serpenti” che esplorano in parallelo tutte le strade possibili.
+> **Progetto scolastico in Java** che utilizza il **multithreading** per risolvere un labirinto generato casualmente. Grazie a un'interfaccia grafica interattiva, il progetto rende visibile il comportamento dei thread mentre esplorano il labirinto.
 
 <p align="center">
-  <img src="banner.png" alt="MazeSolver Screenshot" width="600"/>
+  <img src="banner.png" alt="MazeSolver Screenshot" width="800"/>
 </p>
 
 ---
@@ -22,121 +20,93 @@
 
 ## Caratteristiche Principali
 
-- **Generazione casuale del labirinto**  
-  Ogni esecuzione crea un nuovo intricato percorso, ideale per testare la robustezza del multithreading in situazioni sempre diverse.
+- **Interfaccia Grafica Interattiva**  
+  Il programma utilizza una GUI (`mazesolver.Gui`) per visualizzare il labirinto e i "serpenti" (thread) in azione.
 
-- **Visualizzazione dei thread in azione**  
-  Ogni thread è rappresentato da un “serpente” colorato che esplora il labirinto. Ad ogni bivio, il thread si sdoppia, creando più serpenti che avanzano in parallelo.
+- **Generazione Casuale del Labirinto**  
+  Ogni esecuzione crea un nuovo labirinto grazie alla classe `mazesolver.MazeGenerator`.
 
-- **Comprensione intuitiva del multithreading**  
-  L’aspetto più innovativo è la **metafora visiva** dei serpenti, che rende tangibile il lavoro simultaneo dei thread, normalmente “nascosto” a livello di codice.
+- **Multithreading e Visualizzazione in Tempo Reale**  
+  - Ogni thread viene rappresentato graficamente e si sdoppia ad ogni bivio.
+  - L'algoritmo di risoluzione (`mazesolver.RisolviLabirintoThr`) gestisce i thread e la loro velocità (`Speed`).
 
-- **Ricerca dell’uscita**  
-  L’esplorazione termina quando uno dei serpenti trova l’uscita, evidenziando come l’esecuzione concorrente possa accelerare la risoluzione di un problema.
+- **Impostazioni Personalizzabili**  
+  La classe `mazesolver.Impostazioni` suggerisce la possibilità di personalizzare il comportamento del programma.
 
-- **Struttura modulare**  
-  Il progetto è facilmente estendibile, permettendo di:
-  - Utilizzare diversi algoritmi di generazione (es. DFS, Kruskal, Prim, ecc.).
-  - Implementare strategie di ricerca alternative (DFS, BFS, Best-First, ecc.).
-  - Personalizzare l’interfaccia grafica.
+- **Supporto ai Temi di Sistema**  
+  La classe `mazesolver.ThemeDetector` potrebbe adattare i colori della GUI al tema del sistema operativo.
 
 ---
+
+<p align="center">
+  <img src="maze_image.png" alt="MazeSolver Screenshot" width="800"/>
+</p>
 
 ## Funzionamento
 
 1. **Generazione del Labirinto**  
-   Il programma crea una griglia casuale di percorsi e pareti, costruendo un labirinto sempre nuovo.
+   Il programma crea una struttura casuale con percorsi e pareti.
 
-2. **Avvio dei Thread**  
-   Viene creato un thread principale che, alla prima biforcazione, si sdoppia generando più thread. Ciascun thread agisce come un “serpente” che esplora in modo indipendente.
+2. **Avvio della GUI e dei Thread**  
+   - Viene avviata l'interfaccia grafica (`mazesolver.Gui`).
+   - Il thread principale si sdoppia alla prima biforcazione, creando più thread che esplorano in parallelo.
 
-3. **Esplorazione in Parallelo**  
-   Grazie al multithreading, più serpenti avanzano contemporaneamente in diverse parti del labirinto. Se un serpente incontra un’altra biforcazione, si sdoppia nuovamente.
-
-4. **Trovare l’Uscita**  
-   L’esecuzione continua finché uno dei serpenti non individua l’uscita. Una volta raggiunta, il programma può terminare o visualizzare il percorso finale.
-
-<p align="center">
-  <img src="maze_image.png" alt="MazeSolver Thread Example" width="600"/>
-</p>
+3. **Esplorazione e Risoluzione**  
+   - I thread avanzano indipendentemente.
+   - Quando un thread trova l'uscita, il programma evidenzia il percorso e termina.
 
 ---
 
 ## Installazione e Utilizzo
 
-1. **Clona il repository**  
+1. **Scarica ed esegui il file JAR**  
+   Assicurati di avere Java 8+ installato, poi esegui:
    ```bash
-   git clone https://github.com/tuo-nome-utente/MazeSolver.git
-   cd MazeSolver
+   java -jar MazeSolver.jar
    ```
 
-2. **Compila ed esegui**  
-   - Assicurati di avere installato [Java 8+](https://www.oracle.com/java/technologies/javase-downloads.html).
-   - Compila il progetto con un qualsiasi IDE Java (ad es. IntelliJ, Eclipse) o da terminale:
-     ```bash
-     javac -cp src src/com/mazesolver/Main.java
-     ```
-   - Esegui il programma:
-     ```bash
-     java -cp src com.mazesolver.Main
-     ```
-
-3. **Osserva la magia**  
-   - Una finestra mostrerà il labirinto generato.
-   - I serpenti colorati (thread) inizieranno a percorrere il labirinto.
-   - Ad ogni bivio, noterai la creazione di nuovi serpenti, tutti alla ricerca dell’uscita.
+2. **Interagisci con l'interfaccia**  
+   - Osserva i "serpenti" muoversi nel labirinto.
+   - Modifica eventuali impostazioni per testare differenti scenari.
 
 ---
 
 ## Struttura del Progetto
 
-La struttura può variare a seconda delle tue preferenze, ma un esempio potrebbe essere:
+Il progetto contiene le seguenti classi principali:
 
 ```
-MazeSolver/
+MazeSolver.jar
 │
-├─ src/
-│   ├─ com/mazesolver/
-│   │   ├─ Main.java          # Punto di ingresso del programma
-│   │   ├─ MazeGenerator.java # Classe per generare il labirinto
-│   │   ├─ MazeSolver.java    # Classe che gestisce la logica di esplorazione
-│   │   ├─ ThreadSnake.java   # Classe che rappresenta il singolo thread "serpente"
-│   │   └─ ...
-│
-├─ README.md
-├─ LICENSE (opzionale)
+├─ mazesolver/
+│   ├─ Gui.class                 # Interfaccia grafica
+│   ├─ Impostazioni.class         # Opzioni di configurazione
+│   ├─ Labirinto.class            # Struttura del labirinto
+│   ├─ MazeGenerator.class        # Algoritmo di generazione
+│   ├─ RisolviLabirintoThr.class  # Thread per la risoluzione
+│   ├─ ThemeDetector.class        # Rilevamento tema OS
 └─ ...
 ```
-
-- **Main.java**: avvia il programma e gestisce l’interfaccia utente (se presente).  
-- **MazeGenerator.java**: si occupa di generare il labirinto casualmente.  
-- **MazeSolver.java**: coordina i thread e gestisce la logica di esplorazione.  
-- **ThreadSnake.java**: rappresenta il singolo thread, il serpente che si muove nel labirinto.
 
 ---
 
 ## Contributi e Sviluppi Futuri
 
-- **Algoritmi di generazione**: prova diversi approcci (DFS, Kruskal, Prim, Aldous-Broder, ecc.) per sperimentare layout differenti.  
-- **Algoritmi di risoluzione**: implementa nuove strategie di ricerca (BFS, Best-First, A*, ecc.) e confronta le performance.  
-- **Ottimizzazioni**: esplora meccanismi di sincronizzazione e comunicazione tra thread, ad esempio riducendo i thread “zombie” quando un serpente incontra un vicolo cieco.  
-- **Interfaccia utente**: aggiungi controlli per variare la difficoltà, la dimensione del labirinto o la velocità di esplorazione.
-
-Se hai idee, apri una [issue](https://github.com/paolomalgarin/MazeSolver/issues) o proponi una [pull request](https://github.com/paolomalgarin/MazeSolver/pulls)!
+- **Nuovi Algoritmi di Generazione**: DFS, Kruskal, Prim, ecc.
+- **Miglioramenti nell'Interfaccia**: più opzioni di personalizzazione.
+- **Ottimizzazione del Multithreading**: riduzione dei thread "zombie".
+- **Analisi delle Performance**: confronto tra diversi algoritmi di ricerca.
 
 ---
 
 ## Licenza
 
-Questo progetto è rilasciato sotto la licenza [MIT](LICENSE). Sentiti libero di utilizzarlo, modificarlo e distribuirlo, a condizione di mantenerne i riferimenti originali.
+Questo progetto è distribuito sotto la licenza [MIT](LICENSE). Sentiti libero di utilizzarlo e modificarlo.
 
 ---
 
-**Divertiti a esplorare il mondo del multithreading con *MazeSolver*!**  
-Per qualsiasi dubbio o suggerimento, non esitare a [contattarmi](https://github.com/paolomalgarin). 
+**Buona esplorazione con *MazeSolver*!** 🚀
 
 <p align="center">
-  <img src="banner2.png" alt="MazeSolver End" width="600"/>
+  <img src="banner2.png" alt="MazeSolver Screenshot" width="800"/>
 </p>
-
----
