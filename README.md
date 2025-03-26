@@ -8,7 +8,7 @@ Di seguito un esempio di README in stile GitHub, completo di elementi visivi, se
 > Un modo intuitivo per comprendere il multithreading grazie alla visualizzazione di “serpenti” che esplorano in parallelo tutte le strade possibili.
 
 <p align="center">
-  <img src="path/to/your/maze_image.png" alt="MazeSolver Screenshot" width="600"/>
+  <img src="./maze_image.png" alt="MazeSolver Screenshot" width="600"/>
 </p>
 
 ---
@@ -60,7 +60,7 @@ Di seguito un esempio di README in stile GitHub, completo di elementi visivi, se
    L’esecuzione continua finché uno dei serpenti non individua l’uscita. Una volta raggiunta, il programma può terminare o visualizzare il percorso finale.
 
 <p align="center">
-  <img src="path/to/your/maze_image.png" alt="MazeSolver Thread Example" width="600"/>
+  <img src="maze_image.png" alt="MazeSolver Thread Example" width="600"/>
 </p>
 
 ---
@@ -125,7 +125,7 @@ MazeSolver/
 - **Ottimizzazioni**: esplora meccanismi di sincronizzazione e comunicazione tra thread, ad esempio riducendo i thread “zombie” quando un serpente incontra un vicolo cieco.  
 - **Interfaccia utente**: aggiungi controlli per variare la difficoltà, la dimensione del labirinto o la velocità di esplorazione.
 
-Se hai idee, apri una [issue](https://github.com/tuo-nome-utente/MazeSolver/issues) o proponi una [pull request](https://github.com/tuo-nome-utente/MazeSolver/pulls)!
+Se hai idee, apri una [issue](https://github.com/paolomalgarin/MazeSolver/issues) o proponi una [pull request](https://github.com/paolomalgarin/MazeSolver/pulls)!
 
 ---
 
@@ -136,7 +136,7 @@ Questo progetto è rilasciato sotto la licenza [MIT](LICENSE). Sentiti libero di
 ---
 
 **Divertiti a esplorare il mondo del multithreading con *MazeSolver*!**  
-Per qualsiasi dubbio o suggerimento, non esitare a [contattarmi](https://github.com/tuo-nome-utente). 
+Per qualsiasi dubbio o suggerimento, non esitare a [contattarmi](https://github.com/paolomalgarin). 
 
 <p align="center">
   <img src="path/to/your/maze_image.png" alt="MazeSolver End" width="600"/>
