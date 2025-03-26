@@ -8,7 +8,7 @@ Di seguito un esempio di README in stile GitHub, completo di elementi visivi, se
 > Un modo intuitivo per comprendere il multithreading grazie alla visualizzazione di “serpenti” che esplorano in parallelo tutte le strade possibili.
 
 <p align="center">
-  <img src="./maze_image.png" alt="MazeSolver Screenshot" width="600"/>
+  <img src="banner.png" alt="MazeSolver Screenshot" width="600"/>
 </p>
 
 ---
