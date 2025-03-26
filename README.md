@@ -1,5 +1,3 @@
-Di seguito un esempio di README in stile GitHub, completo di elementi visivi, sezioni ben organizzate e l’immagine allegata. Personalizzalo a tuo piacimento (nome repository, link, ecc.) per renderlo unico e aderente alle tue esigenze.
-
 ---
 
 # MazeSolver
