@@ -139,7 +139,7 @@ Questo progetto è rilasciato sotto la licenza [MIT](LICENSE). Sentiti libero di
 Per qualsiasi dubbio o suggerimento, non esitare a [contattarmi](https://github.com/paolomalgarin). 
 
 <p align="center">
-  <img src="path/to/your/maze_image.png" alt="MazeSolver End" width="600"/>
+  <img src="banner2.png" alt="MazeSolver End" width="600"/>
 </p>
 
 ---
